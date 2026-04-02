@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products – Salsan Naturals</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Salsan <span>Naturals</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <a href="products.html"><i class="fas fa-shopping-bag"></i> <span id="cart-count">0</span></a>
+    </div>
+    <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+  </nav>
+
+  <section class="page-hero">
+    <h1>Our Products</h1>
+    <p>Handcrafted with love and nature's finest ingredients</p>
+  </section>
+
+  <!-- Quick View Modal -->
+  <div id="quickViewModal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="document.getElementById('quickViewModal').classList.remove('open')">&times;</button>
+      <div id="modal-img" class="modal-img"></div>
+      <div class="modal-info">
+        <h2 id="modal-name"></h2>
+        <p id="modal-desc"></p>
+        <span id="modal-price" class="price"></span>
+        <div class="qty-row">
+          <button class="qty-btn" onclick="changeQty(-1)">&#8722;</button>
+          <span id="modal-qty">1</span>
+          <button class="qty-btn" onclick="changeQty(1)">&#43;</button>
+        </div>
+        <button class="btn" onclick="addFromModal()">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-img" style="background:#d4e8d0;"><i class="fas fa-seedling fa-3x"></i></div>
+        <h3>Qasil powder</h3>
+        <p>A natural cleanser made from ground Gob tree leaves, used to purify and enhance natural radiance—leaving the skin clean, smooth, and refreshed</p>
+        <span class="price">$28.99</span>
+        <div class="card-actions">
+          <button class="btn btn-outline" onclick="openModal('Qasil Serum','Vitamin C brightening serum for radiant, even-toned skin.','$28.99','#d4e8d0','fa-seedling')">Quick View</button>
+          <button class="btn add-cart" onclick="addToCart('Qasil Serum', this)">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img" style="background:#f5e6d3;"><i class="fas fa-spa fa-3x"></i></div>
+        <h3>Tumeric powder</h3>
+        <p> A natural powder from turmeric root, known to brighten, soothe, and refresh skin. Can be used for face and body.&amp; shea butter for all skin types.</p>
+        <span class="price">$24.99</span>
+        <div class="card-actions">
+          <button class="btn btn-outline" onclick="openModal('Hydra Moisturizer','Deep hydration with aloe vera &amp; shea butter for all skin types.','$24.99','#f5e6d3','fa-spa')">Quick View</button>
+          <button class="btn add-cart" onclick="addToCart('Hydra Moisturizer', this)">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img" style="background:#e8d5e8;"><i class="fas fa-droplet fa-3x"></i></div>
+        <h3>Rose Face Wash</h3>
+        <p>Gentle daily cleanser with real rose extract and chamomile.</p>
+        <span class="price">$18.99</span>
+        <div class="card-actions">
+          <button class="btn btn-outline" onclick="openModal('Rose Face Wash','Gentle daily cleanser with real rose extract and chamomile.','$18.99','#e8d5e8','fa-droplet')">Quick View</button>
+          <button class="btn add-cart" onclick="addToCart('Rose Face Wash', this)">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img" style="background:#fde8d0;"><i class="fas fa-sun fa-3x"></i></div>
+        <h3>Turmeric Body Scrub</h3>
+        <p>Gently exfoliates and brightens the skin with pure turmeric powder. Leaves skin smooth, refreshed, and radiant. Suitable for face, body, and hair care.</p>
+        <span class="price">$22.99</span>
+        <div class="card-actions">
+          <button class="btn btn-outline" onclick="openModal('SPF 50 Sunscreen','Lightweight, non-greasy sun protection with zinc oxide.','$22.99','#fde8d0','fa-sun')">Quick View</button>
+          <button class="btn add-cart" onclick="addToCart('SPF 50 Sunscreen', this)">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img" style="background:#d5e8f5;"><i class="fas fa-wind fa-3x"></i></div>
+        <h3>Coffee Body Scrub</h3>
+        <p>Revitalizes and energizes the skin with finely ground coffee. Helps reduce dullness, stimulates circulation, and leaves skin soft and glowing. Ideal for body exfoliation.</p>
+        <span class="price">$19.99</span>
+        <div class="card-actions">
+          <button class="btn btn-outline" onclick="openModal('Pore Minimizer Toner','Balances skin tone and tightens pores with witch hazel.','$19.99','#d5e8f5','fa-wind')">Quick View</button>
+          <button class="btn add-cart" onclick="addToCart('Pore Minimizer Toner', this)">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img" style="background:#f5d5d5;"><i class="fas fa-moon fa-3x"></i></div>
+        <h3>Moringa Powder</h3>
+        <p>Moringa Powder
+A natural powder made from moringa leaves, rich in antioxidants and nutrients. Helps nourish, revitalize, and support healthy skin, hair, and body wellness. Ideal for face masks, body treatments, and hair care routines..</p>
+        <span class="price">$34.99</span>
+        <div class="card-actions">
+          <button class="btn btn-outline" onclick="openModal('Night Repair Cream','Overnight renewal with retinol and hyaluronic acid.','$34.99','#f5d5d5','fa-moon')">Quick View</button>
+          <button class="btn add-cart" onclick="addToCart('Night Repair Cream', this)">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img" style="background:#e8f5d5;"><i class="fas fa-mortar-pestle fa-3x"></i></div>
+        <h3>Clay Detox Mask</h3>
+        <p>Deep cleansing kaolin clay mask for clear, smooth skin.</p>
+        <span class="price">$21.99</span>
+        <div class="card-actions">
+          <button class="btn btn-outline" onclick="openModal('Clay Detox Mask','Deep cleansing kaolin clay mask for clear, smooth skin.','$21.99','#e8f5d5','fa-mortar-pestle')">Quick View</button>
+          <button class="btn add-cart" onclick="addToCart('Clay Detox Mask', this)">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img" style="background:#f5f0d5;"><i class="fas fa-eye fa-3x"></i></div>
+        <h3>Hibiscus Powder</h3>
+        <p> Hibiscus Powder
+A natural powder from hibiscus flowers, known for its gentle exfoliating and brightening properties. Helps smooth, refresh, and revitalize skin, while supporting healthy hair and scalp. Perfect for face, body, and hair care.&amp; peptides.</p>
+        <span class="price">$26.99</span>
+        <div class="card-actions">
+          <button class="btn btn-outline" onclick="openModal('Eye Cream','Reduces dark circles and puffiness with caffeine &amp; peptides.','$26.99','#f5f0d5','fa-eye')">Quick View</button>
+          <button class="btn add-cart" onclick="addToCart('Eye Cream', this)">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand"><div class="logo">Salsan <span>Naturals</span></div><p>Pure skincare rooted in nature.</p></div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 Salsan Naturals. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
